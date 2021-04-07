@@ -6,7 +6,7 @@
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 01:05:18 by ahallain          #+#    #+#             */
-/*   Updated: 2021/04/03 02:00:22 by ahallain         ###   ########.fr       */
+/*   Updated: 2021/04/07 09:01:24 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 #include "Sorcerer.hpp"
 #include "Peon.hpp"
+#include "Human.hpp"
 
 int main()
 {
 	Sorcerer robert("Robert", "the Magnificent");
 	Victim jim("Jimmy");
 	Peon joe("Joe");
-	std::cout << robert << jim << joe;
+	Human eric("Eric");
+	std::cout << robert << jim << joe << eric;
 	robert.polymorph(jim);
 	robert.polymorph(joe);
+	robert.polymorph(eric);
 	return (0);
 }

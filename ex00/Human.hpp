@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/03 01:39:50 by ahallain          #+#    #+#             */
-/*   Updated: 2021/04/07 08:56:55 by ahallain         ###   ########.fr       */
+/*   Created: 2021/04/07 08:58:37 by ahallain          #+#    #+#             */
+/*   Updated: 2021/04/07 08:58:58 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-#define VICTIM_HPP
+#ifndef HUMAN_HPP
+#define HUMAN_HPP
 
-#include <string>
+#include "Victim.hpp"
 
-class Victim
+class Human
+	: public Victim
 {
 private:
-	std::string name;
-
 public:
-	Victim(const Victim &clone);
-	Victim(std::string name);
-	virtual ~Victim();
-	Victim &operator=(const Victim &op);
-	std::string getName() const;
-	virtual void getPolymorphed() const;
+	Human(const Human &clone);
+	Human(std::string name);
+	~Human();
+	Human &operator=(const Human &op);
+	void getPolymorphed() const;
 };
-std::ostream &operator<<(std::ostream &out, Victim const &victim);
 #endif
