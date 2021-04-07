@@ -6,15 +6,18 @@
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 18:03:05 by ahallain          #+#    #+#             */
-/*   Updated: 2021/04/06 18:19:02 by ahallain         ###   ########.fr       */
+/*   Updated: 2021/04/07 10:14:35 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Character.hpp"
 #include "RadScorpion.hpp"
+#include "SuperMutant.hpp"
+#include "Zombie.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "Knife.hpp"
 
 int main()
 {
@@ -22,26 +25,26 @@ int main()
 
 	std::cout << *me;
 
-	Enemy *b = new RadScorpion();
+	Enemy *z = new Zombie();
 
 	AWeapon *pr = new PlasmaRifle();
-	AWeapon *pf = new PowerFist();
+	AWeapon *k = new Knife();
 
 	me->equip(pr);
 	std::cout << *me;
-	me->equip(pf);
+	me->equip(k);
 
-	me->attack(b);
+	me->attack(z);
 	std::cout << *me;
 	me->equip(pr);
 	std::cout << *me;
-	me->attack(b);
+	me->attack(z);
 	std::cout << *me;
-	me->attack(b);
+	me->attack(z);
 	std::cout << *me;
 
 	delete me;
 	delete pr;
-	delete pf;
+	delete k;
 	return 0;
 }
